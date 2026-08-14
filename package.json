@@ -1,0 +1,46 @@
+{
+	"name": "adoquin",
+	"version": "0.1.0",
+	"description": "A ResizeObserver-based library for building masonry layouts",
+	"main": "./dist/index.js",
+	"module": "./dist/index.js",
+	"types": "./dist/types/index.d.ts",
+	"exports": {
+		".": {
+			"types": "./dist/types/index.d.ts",
+			"import": "./dist/index.js"
+		}
+	},
+	"files": [
+		"dist",
+		"README.md",
+		"LICENSE"
+	],
+	"scripts": {
+		"check-types": "tsc --noEmit",
+		"build": "tsc",
+		"prepublishOnly": "npm run check-types && npm run build"
+	},
+	"repository": {
+		"type": "git",
+		"url": "git+https://github.com/hector627/adoquin.git"
+	},
+	"keywords": [
+		"masonry",
+		"grid",
+		"pinterest",
+		"layout",
+		"typescript",
+		"resize-observer"
+	],
+	"author": "Hector Cordoba",
+	"license": "MIT",
+	"type": "module",
+	"bugs": {
+		"url": "https://github.com/hector627/adoquin/issues"
+	},
+	"homepage": "https://github.com/hector627/adoquin#readme",
+	"devDependencies": {
+		"typescript": "^7.0.2"
+	}
+}

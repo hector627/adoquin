@@ -1,0 +1,57 @@
+name: release
+run-name: Create release
+
+on:
+  push:
+    branches:
+      - main
+
+jobs:
+  # commit -> Release PR -> (CHANGELOG + git tag + GitHub release)
+  release:
+    permissions:
+      pull-requests: write
+      contents: write
+
+    runs-on: ubuntu-latest
+
+    outputs:
+      release_created: ${{ steps.release-release.outputs.release_created }}
+
+    steps:
+      - name: Create release with release-please
+        id: release-release
+        uses: googleapis/release-please-action@v4
+
+  # Publish to NPM
+  publish:
+    needs: release
+
+    if: ${{ needs.release.outputs.release_created }}
+
+    permissions:
+      id-token: write
+      contents: read
+
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v6
+
+      - name: Setup Node and NPM
+        uses: actions/setup-node@v6
+        with:
+          node-version: "24"
+
+      - name: Install dependencies
+        run: npm ci
+
+      - name: Check types (for TypeScript)
+        run: npm run check-types
+
+      - name: Compile TypeScript
+        run: npm run build
+
+      - name: Publish to npm
+        run: npm publish --provenance
