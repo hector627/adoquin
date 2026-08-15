@@ -1,4 +1,4 @@
-import type { GridOptions, LayoutResult } from "../types";
+import type { GridOptions, LayoutResult } from "../types.js";
 
 export function calcLayoutPositions(containerWidth: number, $parentGrid: HTMLElement, childHeights: Map<HTMLElement, number>, options: Required<GridOptions>): LayoutResult {
 	const styles = window.getComputedStyle($parentGrid),

@@ -1,2 +1,2 @@
-export * from "./types";
-export { Adoquinado } from "./api";
+export * from "./types.js";
+export { Adoquinado } from "./api.js";

@@ -1,6 +1,6 @@
-import type { GridOptions, LayoutResult, PrevLayoutState } from "./types";
-import { calcLayoutPositions } from "./utils/calcLayout";
-import { midebounce } from "./utils/debounce";
+import type { GridOptions, LayoutResult, PrevLayoutState } from "./types.js";
+import { calcLayoutPositions } from "./utils/calcLayout.js";
+import { midebounce } from "./utils/debounce.js";
 
 const libraryName: string = "Adoquin";
 
