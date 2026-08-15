@@ -1,5 +1,12 @@
 # Changelog
 
+## [0.2.1](https://github.com/hector627/adoquin/compare/adoquin-v0.2.0...adoquin-v0.2.1) (2026-08-15)
+
+
+### Bug Fixes
+
+* Update import statements to include file extensions for consistency ([d54a9e1](https://github.com/hector627/adoquin/commit/d54a9e1497708805fbb9f465eb9db95aac9defcf))
+
 ## [0.2.0](https://github.com/hector627/adoquin/compare/adoquin-v0.1.0...adoquin-v0.2.0) (2026-08-14)
 
 
